@@ -6,14 +6,17 @@
     tools:context="datazi.com.backendless.RegisterFragment">
 
     <EditText
+        android:id="@+id/usernameField"
         android:hint="User name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
+        android:id="@+id/passwordField"
         android:hint="Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
+        android:id="@+id/registerButton"
         android:text="Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
