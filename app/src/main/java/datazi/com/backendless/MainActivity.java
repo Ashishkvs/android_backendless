@@ -17,11 +17,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //BACKENDLESS SERVER
         Backendless.initApp(this,APP_ID,SECRET_KEY);
 
-        //load Fragment
-        loadFragment(new MenuFragment());
+        //if any User Logged in or not show reg and login menu ie. main menu
+        if(Backendless.UserService.loggedInUser()==""){
+            loadFragment(new MenuFragment());
+        }else{
+            loadFragment(new LoggedInFragment());
+
+        }
     }
+
+
+
+
+
+
+
+
     // LOAD Dyanmically FRAGMENT
     public boolean loadFragment(Fragment fragment){
         if(fragment !=null){
