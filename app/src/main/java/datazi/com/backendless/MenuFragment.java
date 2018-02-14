@@ -49,8 +49,9 @@ public class MenuFragment extends Fragment {
                         startActivity(intent);
                     }
                     else if(position==1){
-                        Toast.makeText(getContext(),arrayList.get(position),Toast.LENGTH_SHORT).show();
-
+                        //Toast.makeText(getContext(),arrayList.get(position),Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getContext(),LogInActivity.class);
+                        startActivity(intent);
                     }
             }
         });
