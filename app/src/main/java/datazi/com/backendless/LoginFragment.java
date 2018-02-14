@@ -1,6 +1,7 @@
 package datazi.com.backendless;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -44,13 +45,15 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void handleResponse(BackendlessUser response) {
                         Toast.makeText(getActivity(),"You logged in",Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getActivity(),MainActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void handleFault(BackendlessFault fault) {
                         Toast.makeText(getActivity(),"Error logging",Toast.LENGTH_SHORT).show();
                     }
-                });
+                },true);
             }
         });
         return view;
