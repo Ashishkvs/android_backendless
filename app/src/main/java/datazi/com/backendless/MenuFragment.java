@@ -1,6 +1,7 @@
 package datazi.com.backendless;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -42,8 +43,15 @@ public class MenuFragment extends Fragment {
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getContext(),arrayList.get(i),Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    if(position==0){
+                        Intent intent=new Intent(getContext(),RegisterActivity.class);
+                        startActivity(intent);
+                    }
+                    else if(position==1){
+                        Toast.makeText(getContext(),arrayList.get(position),Toast.LENGTH_SHORT).show();
+
+                    }
             }
         });
         return view;

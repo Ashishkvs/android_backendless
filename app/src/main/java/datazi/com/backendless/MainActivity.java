@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         //load Fragment
         loadFragment(new MenuFragment());
     }
-    //FRAGMENT
+    // LOAD Dyanmically FRAGMENT
     public boolean loadFragment(Fragment fragment){
         if(fragment !=null){
             getSupportFragmentManager()
